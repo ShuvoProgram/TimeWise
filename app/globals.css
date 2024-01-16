@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full;
+  }
+
+  .input-field,
+  .text-area {
+    @apply rounded-md bg-transparent border-none ring-0 shadow-none !mt-0 focus-visible:ring-transparent text-indigo-800 !important;
+  }
+}
+
+.markdown-tips-container {
+  @apply relative;
+}
+
+.markdown-tips-list {
+  @apply flex flex-col w-full gap-1;
+}
+
+.markdown-tips-list li {
+  @apply flex flex-row min-w-[13rem];
+}
+
+.markdown-tips-list li p {
+  @apply mr-auto text-sm;
+}
+
+.markdown-tips-list li span {
+  @apply ml-auto tracking-widest text-center text-sm;
+}
+
+.markdown-preview span {
+  @apply mt-6 px-4 py-2 bg-gray-100 text-gray-700 inline-block rounded-md;
+}
+
+.markdown-preview h1,
+.blog-post-content h1 {
+  @apply text-3xl py-[0.6rem] font-semibold;
+}
+
+.markdown-preview h2,
+.blog-post-content h2 {
+  @apply text-2xl py-[0.6rem] font-medium;
+}
+
+.markdown-preview h3,
+.blog-post-content h3 {
+  @apply text-xl py-[0.4rem] font-light;
+}
+
+.markdown-preview h4,
+.blog-post-content h4 {
+  @apply text-lg py-[0.4rem] font-medium;
+}
+
+.markdown-preview p,
+.blog-post-content p {
+  @apply py-4;
+}
+
+.markdown-preview h5,
+.blog-post-content h5 {
+  color: #9f9f9f;
+  position: relative;
+  display: inline-block;
+  padding: 0.4rem 0;
+  font-weight: 500;
+}
+
+.markdown-preview h5::after,
+.blog-post-content h5::after {
+  content: "";
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #9f9f9f;
+  z-index: 1;
+}
+
+.markdown-preview h6,
+.blog-post-content h6 {
+  @apply text-gray-400 font-bold py-[0.4rem] uppercase;
+}
+
+.markdown-preview code,
+.blog-post-content code {
+  font-family: monospace;
+  @apply tracking-wide;
+}
+
+.markdown-preview em,
+.blog-post-content em {
+  font-weight: 300;
+}
+
+.markdown-preview blockquote,
+.blog-post-content blockquote {
+  @apply text-slate-600 dark:text-slate-300;
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+  padding-left: 0.7rem;
+  font-weight: 300;
+}
+
+.markdown-preview blockquote::before,
+.blog-post-content blockquote::before {
+  @apply bg-slate-600 dark:bg-slate-300;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 85%;
+  width: 3px;
+  z-index: 1;
+}
+
+.markdown-preview ul,
+.blog-post-content ul {
+  list-style-type: disc;
+  padding-left: 0.8rem;
+}
+
+.markdown-preview hr,
+.blog-post-content hr {
+  @apply my-8 border-gray-500;
+}
+
+.radial-filter {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150vw;
+  height: 150%;
+  background: radial-gradient(circle, transparent, rgba(165, 180, 252, 1));
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.radial-dark {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150vw;
+  height: 150%;
+  background: radial-gradient(circle, transparent, rgba(30, 27, 75, 1));
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.fade-border {
+  border: 1px solid rgba(0, 0, 0, 0);
+  animation: fadeInBorder 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInBorder {
+  from {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    border-color: rgba(79, 70, 229, 1);
+  }
+}
+
+/* Main Schedule Styling */
+.fc-day-today {
+  @apply bg-indigo-50 dark:bg-indigo-800 !important;
+}
+
+.fc-day-today a {
+  @apply !text-indigo-800 font-semibold;
+}
+
+.fc-license-message {
+  @apply hidden !important;
+}
+
+.fc-daygrid-day-number {
+  @apply pr-2 text-indigo-800 dark:text-indigo-50 !important;
+}
+
+.fc-day a {
+  @apply text-indigo-900 dark:text-indigo-50 !important;
+}
+
+a.fc-more-link {
+  @apply bg-indigo-400 text-indigo-50 font-medium w-full py-1.5 mt-1 px-2 hover:bg-indigo-500 transition-all !important;
+}
+
+.fc-popover {
+  @apply max-w-[200px] !important;
+}
+
+.fc-popover div.fc-popover-body {
+  @apply min-w-[180px] !important;
+}
+
+.fc-popover-header {
+  @apply text-indigo-800 font-medium !important;
+}
+
+.fc-event {
+  @apply hover:bg-transparent !important;
+}
+
+.event-button button {
+  @apply w-full text-left;
+}
+
+.fc-toolbar button {
+  @apply bg-indigo-900 !important;
+}
+
+.tremor-Flex-root {
+  @apply border-none !important;
+}
+
+.data-\[state\=active\]\:bg-background[data-state="active"] {
+  @apply dark:bg-slate-600 bg-white !important;
+}
